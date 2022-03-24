@@ -4,6 +4,9 @@ class Block:
     Store transactions in a blockchain that supports a cryptocurrency.
     """
 
+    def __init__(self, data):
+        self.data = data
+
 class Blockchain:
     """
     Blockchain: a public ledger of transactions.
@@ -12,3 +15,6 @@ class Blockchain:
 
     def __init__(self):
         self.chain = []
+
+    def add_block(self, data):
+        self.chain.append(Block(data))
