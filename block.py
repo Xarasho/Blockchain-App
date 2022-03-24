@@ -1,3 +1,16 @@
+import time
+
+def mine_block(last_block, data):
+    """
+    Mine aa block based on the last_block and data.
+    """
+
+    timestamp = time.time_ns()
+    last_hash = last_block.hash
+    hash = f'{timestamp}-{last_hash}'
+
+    return Block(timestamp, last_hash, hash, data)
+
 class Block:
     """
     Block: a unit of storage.
