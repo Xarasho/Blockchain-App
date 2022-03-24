@@ -7,6 +7,9 @@ class Block:
     def __init__(self, data):
         self.data = data
 
+    def __repr__(self):
+        return f'Block - data: {self.data}'
+
 class Blockchain:
     """
     Blockchain: a public ledger of transactions.
@@ -20,7 +23,7 @@ class Blockchain:
         self.chain.append(Block(data))
 
     def __repr__(self):
-        print(f'Blockchain: {self.chain}')
+        return f'Blockchain: {self.chain}'
 
 blockchain = Blockchain()
 blockchain.add_block('one')
