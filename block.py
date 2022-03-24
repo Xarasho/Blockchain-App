@@ -11,6 +11,14 @@ def mine_block(last_block, data):
 
     return Block(timestamp, last_hash, hash, data)
 
+def genesis():
+    """
+    Generate the genesis block.
+    """
+
+    return Block(1, 'genesis_last_hash', 'genesis_hash', [])
+
+
 class Block:
     """
     Block: a unit of storage.
@@ -33,9 +41,9 @@ class Block:
         )
 
 def main():
-    block = Block('foo')
+    genesis_block = genesis()
+    block = mine_block(genesis_block, 'foo')
     print(block)
-    print(f'block.py __name__: {__name__}')
 
 if __name__ == '__main__':
     main()
